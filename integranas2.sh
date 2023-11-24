@@ -537,6 +537,8 @@ echo "Interface IP NAS: (Ex: $INTERFACE)"
 read INTERFACE
 echo "Nome do Pool IPv4:"
 read POOLV4
+echo "Nome do Pool IPv6-PD:"
+read POOLPDV6
 echo "Nome do Pool IPv6-Prefix:"
 read POOLPREFIXOV6
 
@@ -617,7 +619,7 @@ interface Virtual-Template10
  no ipv6 nd ra suppress
  ipv6 nd ra lifetime 21600
  ipv6 nd ra interval 4 3
- ipv6 dhcp server poolv6-pd allow-hint
+ ipv6 dhcp server $POOLPDV6 allow-hint
  no snmp trap link-status
  keepalive 60 2
  ppp max-bad-auth 8
