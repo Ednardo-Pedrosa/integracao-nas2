@@ -540,6 +540,8 @@ read POOLV4
 echo "Nome do Pool IPv6-Prefix:"
 read POOLPREFIXOV6
 
+cat <<EOF > cisco-$NOME_PROV.txt
+
 conf t
 
 aaa group server radius SGP-$PROVEDOR
